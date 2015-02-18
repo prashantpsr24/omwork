@@ -26,6 +26,8 @@ void Computer::initialize()
        out = gate ("out");
 
            counter = 1;
+           WATCH (counter);
+
 
            if (id == S)
            {

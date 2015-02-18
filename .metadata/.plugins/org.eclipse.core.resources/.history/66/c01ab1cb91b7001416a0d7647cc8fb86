@@ -13,19 +13,12 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package cnlab1;
-
 //
-// TODO auto-generated module
+// TODO generated message class
 //
-simple Computer
-{
-    parameters:
-        int address;
-        int src;
-        int dest;
-        
-    gates:
-    	input in;
-    	output out;
+packet Pkt {
+    int someField;
+    string anotherField;
+    double arrayField1[];
+    double arrayField2[10];
 }

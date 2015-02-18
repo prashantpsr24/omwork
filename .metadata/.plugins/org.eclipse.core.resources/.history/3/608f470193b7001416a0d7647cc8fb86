@@ -13,19 +13,21 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package cnlab1;
+#include "computer.h"
 
-//
-// TODO auto-generated module
-//
-simple Computer
+Define_Module(Computer);
+
+void Computer::initialize()
 {
-    parameters:
-        int address;
-        int src;
-        int dest;
-        
-    gates:
-    	input in;
-    	output out;
+    id = par ("address");
+       S = par ("src");
+       D = par ("dest");
+       in = gate ("in");
+       out = gate ("out");
+    // TODO - Generated method body
+}
+
+void Computer::handleMessage(cMessage *msg)
+{
+    // TODO - Generated method body
 }

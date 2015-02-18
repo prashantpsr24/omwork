@@ -15,17 +15,17 @@
 
 package cnlab1;
 
-//
-// TODO auto-generated module
-//
-simple Computer
+network Network
 {
-    parameters:
-        int address;
-        int src;
-        int dest;
-        
-    gates:
-    	input in;
-    	output out;
+    types:
+    submodules:
+        computer: Computer {
+            @display("p=64,79");
+        }
+        computer1: Computer {
+            @display("p=227,79");
+        }
+    connections:
+        computer.out --> computer1.in;
+        computer1.out --> computer.in;
 }

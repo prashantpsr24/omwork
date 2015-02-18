@@ -15,17 +15,6 @@
 
 package cnlab1;
 
-//
-// TODO auto-generated module
-//
-simple Computer
+network Network
 {
-    parameters:
-        int address;
-        int src;
-        int dest;
-        
-    gates:
-    	input in;
-    	output out;
 }

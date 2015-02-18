@@ -13,19 +13,18 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package cnlab1;
-
 //
-// TODO auto-generated module
+// TODO generated message class
 //
-simple Computer
+enum t
 {
-    parameters:
-        int address;
-        int src;
-        int dest;
-        
-    gates:
-    	input in;
-    	output out;
+    DATA = 0;
+    ACK = 1;
+}
+
+message Pkt {
+    int id;
+    int src;
+    int dest;
+    bool type @enum(t);
 }

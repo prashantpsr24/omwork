@@ -45,7 +45,7 @@ void Node::handleMessage(cMessage *msg)
         p->setSrc (S);
         p->setDest (D);
         p->setType (DATA);
-        EV << "Sending DATA is self with id = " << p->getId () << ".\n";
+       // EV << "Sending DATA is self with id = " << p->getId () << ".\n";
         send (p, "out");
     }
     else
