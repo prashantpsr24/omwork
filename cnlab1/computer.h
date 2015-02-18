@@ -17,13 +17,19 @@
 #define __CNLAB1_COMPUTER_H_
 
 #include <omnetpp.h>
-
+#include "pkt_m.h"
 /**
  * TODO - Generated class
  */
 class Computer : public cSimpleModule
 {
   protected:
+    int counter;
+        int id;
+        int S;
+        int D;
+        cGate* in;
+        cGate* out;
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 };

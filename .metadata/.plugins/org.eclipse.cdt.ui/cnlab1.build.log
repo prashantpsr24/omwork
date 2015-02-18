@@ -1,0 +1,5 @@
+00:06:54 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+
+00:06:54 Build Finished (took 63ms)
+

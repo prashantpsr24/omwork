@@ -22,8 +22,7 @@ simple Computer
 {
     parameters:
         int address;
-        int src;
-        int dest;
+       
         
     gates:
     	input in;

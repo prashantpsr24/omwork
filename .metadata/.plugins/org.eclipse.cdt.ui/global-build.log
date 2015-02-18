@@ -1,0 +1,6 @@
+00:06:51 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+computer.cc
+Creating executable: out/gcc-debug//cnlab1
+00:06:54 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
