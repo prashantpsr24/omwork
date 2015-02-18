@@ -1444,3 +1444,9 @@ java.lang.Exception
 
 !ENTRY org.omnetpp.launch 4 134 2015-02-19 00:07:30.487
 !MESSAGE Run #0: Finished with Error
+
+!ENTRY org.eclipse.cdt.ui 2 0 2015-02-19 00:19:39.010
+!MESSAGE Default project not found in New C/C++ Project Wizard
+
+!ENTRY org.eclipse.cdt.core 1 0 2015-02-19 00:19:39.983
+!MESSAGE Indexed 'lab3' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
