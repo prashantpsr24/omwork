@@ -17,13 +17,19 @@
 #define __LAB3_PHLAYER_H_
 
 #include <omnetpp.h>
-
+#include "ppdu_m.h"
+#include "dpdu_m.h"
 /**
  * TODO - Generated class
  */
 class Phlayer : public cSimpleModule
 {
   protected:
+    cGate* in0;
+    cGate* out0;
+    cGate* in1;
+    cGate* out1;
+    int id;
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 };

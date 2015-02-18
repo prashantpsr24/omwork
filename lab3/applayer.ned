@@ -20,6 +20,8 @@ package lab3;
 //
 simple Applayer
 {
+   parameters:
+       int id;
   gates:
     	input in0;
     	output out0;   

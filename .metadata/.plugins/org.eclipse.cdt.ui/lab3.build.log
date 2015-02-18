@@ -1,0 +1,15 @@
+02:58:01 **** Build of configuration gcc-debug for project lab3 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+MSGC: dpdu.msg
+MSGC: ppdu.msg
+phlayer.cc
+MSGC: apdu.msg
+dllayer.cc
+applayer.cc
+ppdu_m.cc
+apdu_m.cc
+dpdu_m.cc
+Creating executable: out/gcc-debug//lab3
+
+02:58:06 Build Finished (took 4s.275ms)
+

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="TemplateBasedWizard">
-		<item value="bundleentry://277.fwk1976904780/template/emptyproject/" key="project.template"/>
+		<item value="bundleentry://277.fwk2119134723/template/emptyproject/" key="project.template"/>
+		<item value="bundleentry://289.fwk2119134723/templates/msgfile/" key="msgfile.template"/>
+		<item value="bundleentry://291.fwk2119134723/templates/emptynetwork/" key="network.template"/>
+		<item value="bundleentry://291.fwk2119134723/templates/emptycompoundmodule/" key="compoundmodule.template"/>
 		<item value="bundleentry://291.fwk2119134723/templates/emptysimplemodule/" key="simplemodule.template"/>
 	</section>
 </section>

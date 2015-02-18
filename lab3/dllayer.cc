@@ -19,10 +19,36 @@ Define_Module(Dllayer);
 
 void Dllayer::initialize()
 {
+                in0 = gate ("in0");
+              out0 = gate ("out0");
+              in1 = gate ("in1");
+               out1 = gate ("out1");
+              id=par("id");
     // TODO - Generated method body
 }
 
 void Dllayer::handleMessage(cMessage *msg)
 {
+    if(msg->arrivedOn("in0"))
+    {
+        apdu* pkt=new apdu();
+        pkt = check_and_cast<apdu*> (msg);
+        Dpdu *frame=new Dpdu();
+        frame->setSrc(pkt->getSrc());
+        frame->setDest(pkt->getDest());
+        frame->setType(pkt->getType());
+        send (frame, "out1");
+    }
+    else if(msg->arrivedOn("in1"))
+    {
+        Dpdu* frame=new Dpdu();
+        frame = check_and_cast<Dpdu*> (msg);
+        apdu *pkt=new apdu();
+        pkt->setSrc(frame->getSrc());
+        pkt->setDest(frame->getDest());
+        pkt->setType(frame->getType());
+        send (pkt, "out0");
+
+    }
     // TODO - Generated method body
 }

@@ -1,0 +1,40 @@
+//
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public License
+// along with this program.  If not, see http://www.gnu.org/licenses/.
+// 
+
+package lab3;
+
+module Node
+{
+    gates:
+        input in0;
+        output out0;
+    submodules:
+        applayer: Applayer {
+            @display("p=52,75");
+        }
+        dllayer: Dllayer {
+            @display("p=176,75");
+        }
+        phlayer: Phlayer {
+            @display("p=307,75");
+        }
+    connections:
+        applayer.out0 --> dllayer.in0;
+        dllayer.out0 --> applayer.in0;
+        dllayer.out1 --> phlayer.in0;
+        phlayer.out0 --> dllayer.in1;
+        phlayer.out1 --> out0;
+        in0 --> phlayer.in1;
+}

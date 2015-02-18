@@ -17,13 +17,19 @@
 #define __LAB3_APPLAYER_H_
 
 #include <omnetpp.h>
-
+#include "apdu_m.h"
 /**
  * TODO - Generated class
  */
 class Applayer : public cSimpleModule
 {
   protected:
+            int id;
+           // int S;
+          //  int D;id
+
+            cGate* in0;
+            cGate* out0;
     virtual void initialize();
     virtual void handleMessage(cMessage *msg);
 };

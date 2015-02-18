@@ -23,7 +23,6 @@ enum t
 }
 
 message Pkt {
-    int id;
     int src;
     int dest;
     bool type @enum(t);

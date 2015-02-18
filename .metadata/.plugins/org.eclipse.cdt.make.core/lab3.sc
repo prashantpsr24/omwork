@@ -11,6 +11,7 @@
 <includePath path="/usr/include/x86_64-linux-gnu"/>
 <includePath path="/usr/include"/>
 <includePath path="/home/panther/omnetpp-4.6/include"/>
+<includePath path="/home/panther/Desktop/omwork/lab3"/>
 <definedSymbol symbol="__STDC__=1"/>
 <definedSymbol symbol="__cplusplus=199711L"/>
 <definedSymbol symbol="__STDC_HOSTED__=1"/>

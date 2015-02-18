@@ -24,7 +24,7 @@
 class Computer : public cSimpleModule
 {
   protected:
-    int counter;
+        int counter;
         int id;
         int S;
         int D;

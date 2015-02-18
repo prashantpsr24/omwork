@@ -1,6 +1,12 @@
-00:06:51 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
+02:58:01 **** Build of configuration gcc-debug for project lab3 ****
 make MODE=debug CONFIGNAME=gcc-debug all 
-computer.cc
-Creating executable: out/gcc-debug//cnlab1
-00:06:54 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
-make MODE=debug CONFIGNAME=gcc-debug all 
+MSGC: dpdu.msg
+MSGC: ppdu.msg
+phlayer.cc
+MSGC: apdu.msg
+dllayer.cc
+applayer.cc
+ppdu_m.cc
+apdu_m.cc
+dpdu_m.cc
+Creating executable: out/gcc-debug//lab3

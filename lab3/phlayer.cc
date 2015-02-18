@@ -19,10 +19,37 @@ Define_Module(Phlayer);
 
 void Phlayer::initialize()
 {
+    in0 = gate ("in0");
+     out0 = gate ("out0");
+     in1 = gate ("in1");
+     out1 = gate ("out1");
+     id=par("id");
     // TODO - Generated method body
 }
 
 void Phlayer::handleMessage(cMessage *msg)
 {
+    if(msg->arrivedOn("in0"))
+        {
+            Dpdu* frame=new Dpdu();
+            frame = check_and_cast<Dpdu*> (msg);
+            Ppdu *signal=new Ppdu();
+            signal->setSrc(frame->getSrc());
+            signal->setDest(frame->getDest());
+            signal->setType(frame->getType());
+            send (signal, "out1");
+        }
+        else if(msg->arrivedOn("in1"))
+        {
+            Ppdu* signal=new Ppdu();
+            signal = check_and_cast<Ppdu*> (msg);
+            Dpdu *frame=new Dpdu();
+            frame->setSrc(signal->getSrc());
+            frame->setDest(signal->getDest());
+            frame->setType(signal->getType());
+            send (frame, "out0");
+
+        }
+
     // TODO - Generated method body
 }

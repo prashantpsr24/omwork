@@ -1,5 +1,6 @@
-00:06:54 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
-make MODE=debug CONFIGNAME=gcc-debug all 
+02:43:31 **** Clean-only build of configuration gcc-debug for project cnlab1 ****
+make MODE=debug CONFIGNAME=gcc-debug clean 
+Cleaning...
 
-00:06:54 Build Finished (took 63ms)
+02:43:31 Build Finished (took 67ms)
 

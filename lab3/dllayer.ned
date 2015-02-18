@@ -20,6 +20,8 @@ package lab3;
 //
 simple Dllayer
 {
+    parameters:
+       int id;
     gates:
     	input in0;
     	output out0;
