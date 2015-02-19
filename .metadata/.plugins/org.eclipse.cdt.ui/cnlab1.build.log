@@ -1,4 +1,4 @@
-10:31:47 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
+10:35:30 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 computer.cc
 In file included from /home/panther/omnetpp-4.6/include/cchannel.h:25:0,
@@ -24,5 +24,5 @@ computer.cc:79:36: error: within this context
                                     ^
 make: *** [out/gcc-debug//computer.o] Error 1
 
-10:31:48 Build Finished (took 668ms)
+10:35:30 Build Finished (took 714ms)
 

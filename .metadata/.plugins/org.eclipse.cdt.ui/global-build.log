@@ -1,8 +1,8 @@
-10:31:44 **** Incremental Build of configuration gcc-debug for project lab3 ****
+10:35:26 **** Incremental Build of configuration gcc-debug for project lab3 ****
 make MODE=debug CONFIGNAME=gcc-debug all 
-phlayer.cc
+dllayer.cc
 Creating executable: out/gcc-debug//lab3
-10:31:47 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
+10:35:30 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 computer.cc
 In file included from /home/panther/omnetpp-4.6/include/cchannel.h:25:0,
@@ -27,5 +27,5 @@ computer.cc:79:36: error: within this context
              newData->setId (counter);
                                     ^
 make: *** [out/gcc-debug//computer.o] Error 1
-10:31:48 **** Incremental Build of configuration gcc-debug for project lab3 ****
+10:35:30 **** Incremental Build of configuration gcc-debug for project lab3 ****
 make MODE=debug CONFIGNAME=gcc-debug all 

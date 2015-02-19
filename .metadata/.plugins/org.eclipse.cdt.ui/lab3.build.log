@@ -1,5 +1,5 @@
-10:31:48 **** Incremental Build of configuration gcc-debug for project lab3 ****
+10:35:30 **** Incremental Build of configuration gcc-debug for project lab3 ****
 make MODE=debug CONFIGNAME=gcc-debug all 
 
-10:31:48 Build Finished (took 66ms)
+10:35:30 Build Finished (took 67ms)
 

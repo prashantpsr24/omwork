@@ -45,7 +45,6 @@ void Dllayer::handleMessage(cMessage *msg)
         Dpdu* frame=new Dpdu();
         frame = check_and_cast<Dpdu*> (msg);
         apdu *pkt=new apdu();
-        pkt->setId(frame->getId());
         pkt->setSrc(frame->getSrc());
         pkt->setDest(frame->getDest());
         pkt->setType(frame->getType());
