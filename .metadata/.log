@@ -6566,3 +6566,12 @@ java.lang.Exception
 	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:305)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-02-19 09:02:58.073 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_75
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.omnetpp.main 1 0 2015-02-19 09:03:14.096
+!MESSAGE OMNeT++ IDE 4.6.0.141202-f785492 started.
