@@ -18,6 +18,8 @@
 //
 
 packet Dpdu {
+    
+    int id;
     int src;
    int dest;
    bool type;

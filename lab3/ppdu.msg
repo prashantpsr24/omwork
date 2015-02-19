@@ -18,6 +18,7 @@
 //
 
 packet Ppdu {
+    int id;
     int src;
    int dest;
    bool type;

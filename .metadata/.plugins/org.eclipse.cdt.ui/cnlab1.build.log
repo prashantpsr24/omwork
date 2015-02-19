@@ -1,6 +1,28 @@
-02:43:31 **** Clean-only build of configuration gcc-debug for project cnlab1 ****
-make MODE=debug CONFIGNAME=gcc-debug clean 
-Cleaning...
+10:31:47 **** Incremental Build of configuration gcc-debug for project cnlab1 ****
+make MODE=debug CONFIGNAME=gcc-debug all 
+computer.cc
+In file included from /home/panther/omnetpp-4.6/include/cchannel.h:25:0,
+                 from /home/panther/omnetpp-4.6/include/omnetpp.h:28,
+                 from computer.h:19,
+                 from computer.cc:16:
+/home/panther/omnetpp-4.6/include/cmessage.h: In member function ‘virtual void Computer::handleMessage(cMessage*)’:
+/home/panther/omnetpp-4.6/include/cmessage.h:150:10: error: ‘void cMessage::setId(long int)’ is private
+     void setId(long id) {msgid = id;}
+          ^
+computer.cc:65:32: error: within this context
+             ack->setId (counter);
+                                ^
+In file included from /home/panther/omnetpp-4.6/include/cchannel.h:25:0,
+                 from /home/panther/omnetpp-4.6/include/omnetpp.h:28,
+                 from computer.h:19,
+                 from computer.cc:16:
+/home/panther/omnetpp-4.6/include/cmessage.h:150:10: error: ‘void cMessage::setId(long int)’ is private
+     void setId(long id) {msgid = id;}
+          ^
+computer.cc:79:36: error: within this context
+             newData->setId (counter);
+                                    ^
+make: *** [out/gcc-debug//computer.o] Error 1
 
-02:43:31 Build Finished (took 67ms)
+10:31:48 Build Finished (took 668ms)
 

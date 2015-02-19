@@ -43,7 +43,6 @@ void Computer::handleMessage(cMessage *msg)
     if (msg->isSelfMessage())
     {
         Pkt* p = new Pkt();
-        p->setId (counter);
         p->setSrc (id);
         p->setDest ((id+1)%2);
         p->setType (DATA);

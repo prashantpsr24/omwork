@@ -25,6 +25,7 @@ class Applayer : public cSimpleModule
 {
   protected:
             int id;
+            int counter;
            // int S;
           //  int D;id
 

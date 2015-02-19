@@ -39,6 +39,7 @@ enum t {
  * <pre>
  * packet apdu
  * {
+ *     int id;
  *     int src;
  *     int dest;
  *     bool type @enum(t);
@@ -48,6 +49,7 @@ enum t {
 class apdu : public ::cPacket
 {
   protected:
+    int id_var;
     int src_var;
     int dest_var;
     bool type_var;
@@ -69,6 +71,8 @@ class apdu : public ::cPacket
     virtual void parsimUnpack(cCommBuffer *b);
 
     // field getter/setter methods
+    virtual int getId() const;
+    virtual void setId(int id);
     virtual int getSrc() const;
     virtual void setSrc(int src);
     virtual int getDest() const;

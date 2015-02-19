@@ -22,14 +22,19 @@ void Applayer::initialize()
           in0 = gate ("in0");
           out0 = gate ("out0");
          id=par("id");
-
+         counter=0;
           if(id==0)
           {
+              //cMessage* msg = new cMessage ();
+
               apdu* pkt=new apdu();
               pkt->setSrc(0);
               pkt->setDest(1);
               pkt->setType(DATA);
-              send (pkt, "out0");
+              pkt->setId(counter);
+             // EV<<"id="<<pkt->getId();
+               send (pkt, "out0");
+              counter++;
               //send
           }
 
@@ -47,7 +52,21 @@ void Applayer::handleMessage(cMessage *msg)
         ackpkt->setSrc(pkt->getDest());
         ackpkt->setDest(pkt->getSrc());
         ackpkt->setType(ACK);
+        if(pkt->getId()==0)
+        ackpkt->setId(1);
+        else
+        ackpkt->setId(0);
         send (ackpkt, "out0");
+    }
+    else if(counter<10)
+    {
+        apdu* pkt=new apdu();
+        pkt->setSrc(0);
+        pkt->setDest(1);
+        pkt->setType(DATA);
+        pkt->setId(counter);
+        send (pkt, "out0");
+        counter++;
     }
     // TODO - Generated method body
 }

@@ -1,0 +1,6 @@
+[General]
+network = Network
+Network.node.address = 0
+Network.node1.address = 1
+Network.node.applayer.id=0
+Network.node.dllayer.id=0

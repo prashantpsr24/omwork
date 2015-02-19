@@ -57,6 +57,7 @@ Register_Class(Ppdu);
 
 Ppdu::Ppdu(const char *name, int kind) : ::cPacket(name,kind)
 {
+    this->id_var = 0;
     this->src_var = 0;
     this->dest_var = 0;
     this->type_var = 0;
@@ -81,6 +82,7 @@ Ppdu& Ppdu::operator=(const Ppdu& other)
 
 void Ppdu::copy(const Ppdu& other)
 {
+    this->id_var = other.id_var;
     this->src_var = other.src_var;
     this->dest_var = other.dest_var;
     this->type_var = other.type_var;
@@ -89,6 +91,7 @@ void Ppdu::copy(const Ppdu& other)
 void Ppdu::parsimPack(cCommBuffer *b)
 {
     ::cPacket::parsimPack(b);
+    doPacking(b,this->id_var);
     doPacking(b,this->src_var);
     doPacking(b,this->dest_var);
     doPacking(b,this->type_var);
@@ -97,9 +100,20 @@ void Ppdu::parsimPack(cCommBuffer *b)
 void Ppdu::parsimUnpack(cCommBuffer *b)
 {
     ::cPacket::parsimUnpack(b);
+    doUnpacking(b,this->id_var);
     doUnpacking(b,this->src_var);
     doUnpacking(b,this->dest_var);
     doUnpacking(b,this->type_var);
+}
+
+int Ppdu::getId() const
+{
+    return id_var;
+}
+
+void Ppdu::setId(int id)
+{
+    this->id_var = id;
 }
 
 int Ppdu::getSrc() const
@@ -179,7 +193,7 @@ const char *PpduDescriptor::getProperty(const char *propertyname) const
 int PpduDescriptor::getFieldCount(void *object) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 3+basedesc->getFieldCount(object) : 3;
+    return basedesc ? 4+basedesc->getFieldCount(object) : 4;
 }
 
 unsigned int PpduDescriptor::getFieldTypeFlags(void *object, int field) const
@@ -194,8 +208,9 @@ unsigned int PpduDescriptor::getFieldTypeFlags(void *object, int field) const
         FD_ISEDITABLE,
         FD_ISEDITABLE,
         FD_ISEDITABLE,
+        FD_ISEDITABLE,
     };
-    return (field>=0 && field<3) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<4) ? fieldTypeFlags[field] : 0;
 }
 
 const char *PpduDescriptor::getFieldName(void *object, int field) const
@@ -207,20 +222,22 @@ const char *PpduDescriptor::getFieldName(void *object, int field) const
         field -= basedesc->getFieldCount(object);
     }
     static const char *fieldNames[] = {
+        "id",
         "src",
         "dest",
         "type",
     };
-    return (field>=0 && field<3) ? fieldNames[field] : NULL;
+    return (field>=0 && field<4) ? fieldNames[field] : NULL;
 }
 
 int PpduDescriptor::findField(void *object, const char *fieldName) const
 {
     cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount(object) : 0;
-    if (fieldName[0]=='s' && strcmp(fieldName, "src")==0) return base+0;
-    if (fieldName[0]=='d' && strcmp(fieldName, "dest")==0) return base+1;
-    if (fieldName[0]=='t' && strcmp(fieldName, "type")==0) return base+2;
+    if (fieldName[0]=='i' && strcmp(fieldName, "id")==0) return base+0;
+    if (fieldName[0]=='s' && strcmp(fieldName, "src")==0) return base+1;
+    if (fieldName[0]=='d' && strcmp(fieldName, "dest")==0) return base+2;
+    if (fieldName[0]=='t' && strcmp(fieldName, "type")==0) return base+3;
     return basedesc ? basedesc->findField(object, fieldName) : -1;
 }
 
@@ -235,9 +252,10 @@ const char *PpduDescriptor::getFieldTypeString(void *object, int field) const
     static const char *fieldTypeStrings[] = {
         "int",
         "int",
+        "int",
         "bool",
     };
-    return (field>=0 && field<3) ? fieldTypeStrings[field] : NULL;
+    return (field>=0 && field<4) ? fieldTypeStrings[field] : NULL;
 }
 
 const char *PpduDescriptor::getFieldProperty(void *object, int field, const char *propertyname) const
@@ -277,9 +295,10 @@ std::string PpduDescriptor::getFieldAsString(void *object, int field, int i) con
     }
     Ppdu *pp = (Ppdu *)object; (void)pp;
     switch (field) {
-        case 0: return long2string(pp->getSrc());
-        case 1: return long2string(pp->getDest());
-        case 2: return bool2string(pp->getType());
+        case 0: return long2string(pp->getId());
+        case 1: return long2string(pp->getSrc());
+        case 2: return long2string(pp->getDest());
+        case 3: return bool2string(pp->getType());
         default: return "";
     }
 }
@@ -294,9 +313,10 @@ bool PpduDescriptor::setFieldAsString(void *object, int field, int i, const char
     }
     Ppdu *pp = (Ppdu *)object; (void)pp;
     switch (field) {
-        case 0: pp->setSrc(string2long(value)); return true;
-        case 1: pp->setDest(string2long(value)); return true;
-        case 2: pp->setType(string2bool(value)); return true;
+        case 0: pp->setId(string2long(value)); return true;
+        case 1: pp->setSrc(string2long(value)); return true;
+        case 2: pp->setDest(string2long(value)); return true;
+        case 3: pp->setType(string2bool(value)); return true;
         default: return false;
     }
 }

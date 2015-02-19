@@ -1,0 +1,4 @@
+[General]
+network = Network
+Network.node.address = 0
+Network.node1.address = 1

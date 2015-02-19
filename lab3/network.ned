@@ -17,6 +17,11 @@ package lab3;
 
 network Network
 {
+    types:
+        channel Channel extends ned.DelayChannel
+        {
+            delay=100ms;
+        }
     submodules:
         node: Node {
             @display("p=55,79");
@@ -25,6 +30,6 @@ network Network
             @display("p=155,79");
         }
     connections:
-        node.out0 --> node1.in0;
-        node1.out0 --> node.in0;
+        node.out0 --> Channel--> node1.in0;
+        node1.out0 -->Channel--> node.in0;
 }

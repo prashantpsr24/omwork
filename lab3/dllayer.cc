@@ -37,6 +37,7 @@ void Dllayer::handleMessage(cMessage *msg)
         frame->setSrc(pkt->getSrc());
         frame->setDest(pkt->getDest());
         frame->setType(pkt->getType());
+        frame->setId((pkt->getId())%2);
         send (frame, "out1");
     }
     else if(msg->arrivedOn("in1"))

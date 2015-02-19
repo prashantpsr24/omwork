@@ -34,6 +34,7 @@ void Phlayer::handleMessage(cMessage *msg)
             Dpdu* frame=new Dpdu();
             frame = check_and_cast<Dpdu*> (msg);
             Ppdu *signal=new Ppdu();
+            signal->setId(frame->getId());
             signal->setSrc(frame->getSrc());
             signal->setDest(frame->getDest());
             signal->setType(frame->getType());
@@ -44,6 +45,7 @@ void Phlayer::handleMessage(cMessage *msg)
             Ppdu* signal=new Ppdu();
             signal = check_and_cast<Ppdu*> (msg);
             Dpdu *frame=new Dpdu();
+            frame->setId(signal->getId());
             frame->setSrc(signal->getSrc());
             frame->setDest(signal->getDest());
             frame->setType(signal->getType());
